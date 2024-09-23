@@ -5,7 +5,15 @@
 kms to nm
   
 </title>
-<script src="script.js"></script>
+<script>
+var kiloMeters = document.getelementbyid("kms").value;
+var nmDiv = document.getelementbyid("nm");
+var nauticalMiles = kiloMeters * 0.53;
+nmDiv.innerText = nauticalMiles;
+
+
+  
+</script>
   
 </head>
 <body>
