@@ -1,4 +1,4 @@
 var kiloMeters = document.getelementbyid("kms").value;
 var nmDiv = document.getelementbyid("nm");
 var nauticalMiles = kiloMeters * 0.53;
-nmDiv.innerHTML = nauticalMiles;
+nmDiv.innerText = nauticalMiles;
