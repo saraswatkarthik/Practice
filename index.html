@@ -1,28 +1,72 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>
-kms to nm
-  
-</title>
-<script>
-var kiloMeters = document.getelementbyid("kms").value;
-var nmDiv = document.getelementbyid("nm");
-var nauticalMiles = kiloMeters * 0.53;
-nmDiv.innerHTML = nauticalMiles;
-
-
-  
-</script>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilometers to Nautical Miles Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 300px;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<input type = "number" id = "kms">
-  <div id = "nm">
 
-  </div>
-  
+    <div class="container">
+        <h2>Kilometers to Nautical Miles</h2>
+        <form id="converterForm">
+            <label for="kilometers">Kilometers:</label>
+            <input type="number" id="kilometers" placeholder="Enter kilometers" required>
+            <button type="submit">Convert</button>
+        </form>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('converterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let kilometers = document.getElementById('kilometers').value;
+            if(kilometers === "" || kilometers < 0) {
+                alert("Please enter a valid number of kilometers.");
+                return;
+            }
+
+            const nauticalMiles = kilometers * 0.539957; // Conversion factor
+            document.getElementById('result').textContent = kilometers + " kilometers is equal to " + nauticalMiles.toFixed(2) + " nautical miles.";
+        });
+    </script>
+
 </body>
-
-  
 </html>
