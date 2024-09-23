@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kilometers to Nautical Miles Converter</title>
+    <title> Nautical miles to Kilometers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,10 +43,10 @@
 <body>
 
     <div class="container">
-        <h2>Kilometers to Nautical Miles</h2>
+        <h2>Nautical miles to Kilometers</h2>
         <form id="converterForm">
-            <label for="kilometers">Kilometers:</label>
-            <input type="number" id="kilometers" placeholder="Enter kilometers" required>
+            <label for="kilometers">Nautical miles:</label>
+            <input type="number" id="kilometers" placeholder="Enter Nautical miles" required>
             <button type="submit">Convert</button>
         </form>
 
@@ -59,12 +59,12 @@
             
             let kilometers = document.getElementById('kilometers').value;
             if(kilometers === "" || kilometers < 0) {
-                alert("Please enter a valid number of kilometers.");
+                alert("Please enter a valid number of nautical miles.");
                 return;
             }
 
-            const nauticalMiles = kilometers * 0.539957; // Conversion factor
-            document.getElementById('result').textContent = kilometers + " kilometers is equal to " + nauticalMiles.toFixed(2) + " nautical miles.";
+            const nauticalMiles = kilometers * 1.852; // Conversion factor
+            document.getElementById('result').textContent = kilometers + " Nautical miles is equal to " + nauticalMiles.toFixed(2) + " Kilometers.";
         });
     </script>
 
